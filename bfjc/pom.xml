@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.lsf</groupId>
+	<artifactId>imf</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>imf</name>
+	<description>The Web for API</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.8.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<!-- start-class：设置spring boot启动的主main方法，当pom继承自spring-boot-starter-parent时可用，作用等同于plugin/configuration/mainClass -->
+		<start-class>com.lsf.imf.ImfApplication</start-class>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<commons-io.version>2.4</commons-io.version>
+		<guava.version>17.0</guava.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.2.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<!--artifactId>spring-boot-starter-web</artifactId -->
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+		<!-- 加上这个才能辨认到log4j2.yml文件 -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.fasterxml.jackson.dataformat</groupId> -->
+		<!-- <artifactId>jackson-dataformat-yaml</artifactId> -->
+		<!-- </dependency> -->
+
+
+		<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+		    <groupId>dom4j</groupId>
+		    <artifactId>dom4j</artifactId>
+<!-- 		    <version>1.6.1</version> -->
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>3.6</version>
+		</dependency>
+		
+         <dependency>  
+            <groupId>com.ibm.mq</groupId>  
+            <artifactId>commonservices</artifactId>  
+            <version>7.0</version>  
+        </dependency>
+        <dependency>  
+            <groupId>com.ibm.mq</groupId>  
+            <artifactId>headers</artifactId>  
+            <version>7.0</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>com.ibm</groupId>  
+            <artifactId>mq</artifactId>  
+            <version>7.0</version>  
+        </dependency>  
+	         <dependency>  
+            <groupId>com.ibm.mq</groupId>  
+            <artifactId>jmqi</artifactId>  
+            <version>7.0</version>  
+        </dependency>
+        <dependency>  
+            <groupId>com.ibm.mq</groupId>  
+            <artifactId>pcf</artifactId>  
+            <version>7.0</version>  
+        </dependency> 
+		
+		<dependency>
+		    <groupId>javax.resource</groupId>
+		    <artifactId>connector</artifactId>
+		    <version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.29</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.github.theborakompanioni</groupId>
+		    <artifactId>thymeleaf-extras-shiro</artifactId>
+		    <version>1.2.1</version> 
+		</dependency>
+		<!-- JSP视图解析 -->
+		<!-- servlet-api是是servlet3之前的版本，javax.servlet-api是servlet3之后的版本 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- jstl是apache出的，jstl-api是glassfish出的 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.1</version>
+        </dependency>
+        
+        <dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+
+		
+		
+
+		
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- 前端JQuery+bootstrap+layui，layui是对bootstrap有各种实现好的功能，主要是各种弹出层，如弹窗，时间选择器等 -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator</artifactId>
+			<!-- <version>0.31</version> -->
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId>   -->
+<!-- 				<artifactId>maven-compiler-plugin</artifactId> -->
+<!-- 				<configuration> -->
+<!-- 					<source>1.8</source> -->
+<!-- 					<target>1.8</target> -->
+<!-- 					<encoding>UTF-8</encoding>  -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+<!-- 				<version>1.5.3.RELEASE</version> -->
+<!-- 				<configuration> -->
+					<!-- mainClass：设置spring boot启动的主main方法，当pom继承自spring-boot-starter-parent时可通过设置properties/start-class得到同样效果 -->
+<!-- 					<mainClass>com.lsf.imf.ImfApplication</mainClass> -->
+<!-- 				</configuration> -->
+				
+			</plugin>
+		</plugins>
+		<!-- 配置java版本 不配置的话默认父类配置的是1.6-->  
+    <pluginManagement>  
+      <plugins>  
+        <plugin>  
+          <artifactId>maven-compiler-plugin</artifactId>  
+          <configuration>  
+            <source>1.8</source>  
+            <target>1.8</target>  
+          </configuration>  
+        </plugin>  
+      </plugins>  
+    </pluginManagement> 
+    
+    
+<!--     <resources>   -->
+  
+<!--         <resource>   -->
+  
+<!--             <directory>lib</directory>   -->
+  
+<!--             <targetPath>WEB-INF/lib/</targetPath>   -->
+  
+<!--             <includes>   -->
+  
+<!--                 <include>**/*.jar</include>   -->
+  
+<!--             </includes>   -->
+  
+<!--         </resource>   -->
+  
+  
+  
+<!--         <resource>   -->
+  
+<!--             <directory>src/main/resources</directory>   -->
+  
+<!--             <targetPath>WEB-INF/classes/</targetPath>   -->
+  
+<!--         </resource>   -->
+  
+<!--     </resources>  -->
+		<finalName>imf</finalName>
+	</build>
+
+</project>

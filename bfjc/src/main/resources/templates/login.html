@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta content="text/html;charset=UTF-8" />
+<meta http-equiv="X-UA_Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>登录页面</title>
+<link th:href="@{/js/layui/css/layui.css}" rel="stylesheet" />
+<script th:src="@{/js/layui/layui.js}"></script>
+</head>
+<body style="padding-top:15%;">
+<div class="clear box layui-main layui-bg-gray" style="width:26%;text-align:center;border:1px solid #C2C2C2;padding-top:10px;padding-left:20px">
+<form class="layui-form layui-form-pane" action="">
+  <div class="layui-form-item">
+      <h3>边检接口管理页面登录</h3>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">用户名</label>
+    <div class="layui-input-inline">
+      <input type="text" name="userName" lay-verify="required|userName" autocomplete="off" placeholder="请输入用户名" class="layui-input"/>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">密码</label>
+    <div class="layui-input-inline">
+      <input type="password" name="pwd" lay-verify="required|pwd" autocomplete="off" placeholder="请输入密码" class="layui-input"/>
+    </div>
+  </div>  
+	<div class="layui-form-item">
+      <button  type="button" class="layui-btn btn-submit"  lay-submit="" lay-filter="commit">登录</button>
+      <button type="reset" class="layui-btn layui-btn-danger btn-reset">重置</button>
+  </div>  
+  </form>
+  </div>
+  <script th:inline="javascript">
+layui.use(['form'], function(){
+  var form = layui.form,layer = layui.layer,$ = layui.$;
+  //监听提交登录
+  form.on('submit(commit)', function(formData){
+	  $.ajax({
+		  type: 'POST',
+		  url: '../login',		  
+		  dataType: 'json',
+		  data: formData.field,
+		  success: function(rs){
+			  layer.alert(rs.message, {  
+			      title: '登录信息'  
+			  }) ;
+			  if(rs.code=="001"){
+				  location.href = "../";
+			  }
+			  
+			   
+		  }
+		});
+	    return false;	
+  });
+  
+  //自定义验证规则
+  form.verify({
+	userName: function(value){
+      if(value.length > 20){
+        return '最多20个字符啊';
+      }
+    },
+    pwd: [/(.+){3,12}$/, '密码必须3到12位']
+
+  });
+
+  
+});
+</script>
+</body>
+</html>

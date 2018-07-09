@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">    
+<head>  
+    <meta content="text/html;charset=UTF-8" />  
+    <meta http-equiv="X-UA_Compatible" content="IE=edge" />  
+    <meta name="viewport" content="width=device-width,initial-scale=1" />        
+	<title>边检接口管理</title> 
+    <link th:href="@{/js/layui/css/layui.css}" rel="stylesheet" />   
+  	<script th:src="@{/js/layui/layui.js}"></script>       
+
+ </head> 
+ 
+ <body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+ <div class="layui-header">
+    <div class="layui-logo">边检数据接口管理页面</div>    
+    <ul class="layui-nav layui-layout-left" lay-filter="top_menu">
+      <li class="layui-nav-item"><a th:href="@{'/page/panel'}"  target="detail">控制台</a></li>
+      <li class="layui-nav-item"><a th:href="@{'/page/msg'}"  target="detail">接收消息列表</a></li>         
+      
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+<!--           <img src="http://t.cn/RCzsdCq" class="layui-nav-img"/> -->
+          <shiro:principal property = "userName"/>
+        </a>
+      </li>
+      <li class="layui-nav-item"><a  th:href="@{'/logout'}">退出</a></li>
+    </ul>
+  </div>
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <iframe id="detail" name="detail" th:src="@{'/page/panel'}" style="overflow: visible;" scrolling="yes" frameborder="no" width="100%" height="98%"></iframe>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © Wondersgroup - 2017
+  </div>
+</div>
+
+  
+ </body>  
+ 
+</html> 

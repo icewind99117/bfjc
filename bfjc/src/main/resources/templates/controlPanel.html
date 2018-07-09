@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta content="text/html;charset=UTF-8" />
+<meta http-equiv="X-UA_Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>控制面板</title>
+<link th:href="@{/js/layui/css/layui.css}" rel="stylesheet" />
+<script th:src="@{/js/layui/layui.js}"></script>
+<script th:src="@{/js/controlPanel.js}"></script>
+</head>
+<body style="margin:10px 20px 10px 0px;">
+<form class="layui-form">
+
+
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit="" lay-filter="save">保存配置</button>      
+    </div>
+  </div>  
+ </form>
+
+</body>
+</html>

@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lsf.imf.mapper.AfdsInfoMapper">
+	<resultMap type="com.lsf.imf.entity.bo.AfdsInfo" id="afdsInfoMap">
+		<id property="id" column="id"/>
+		<result property="flightIdentity" column="flight_identity"/>
+		<result property="flightDirection" column="flight_direction"/>
+		<result property="flightRepeatCount" column="flight_repeat_count"/>
+		<result property="scheduledDate" column="scheduled_date"/>
+		<result property="iataCarrierIataCode" column="iata_carrier_iata_code"/>
+		<result property="iataFlightNumber" column="iata_flight_number"/>
+		<result property="iataFlightSuffix" column="iata_flight_suffix"/>
+		<result property="icaoCarrierIcaoCode" column="icao_carrier_icao_code"/>
+		<result property="icaoFlightNumber" column="icao_flight_number"/>
+		<result property="icaoFlightSuffix" column="icao_flight_suffix"/>
+		<result property="aircraftCallsign" column="aircraft_callsign"/>
+		<result property="aircraftOwnerIataCode" column="aircraft_owner_iata_code"/>
+		<result property="aircraftPassengerCapacity" column="aircraft_passenger_capacity"/>
+		<result property="aircraftRegistration" column="aircraft_registration"/>
+		<result property="aircraftSubtypeIataCode" column="aircraft_subtype_iata_code"/>
+		<result property="aircraftTypeIcaoCode" column="aircraft_type_icao_code"/>
+		<result property="aircraftOperator" column="aircraft_operator"/>
+		<result property="aircraftTerminalCode" column="aircraft_terminal_code"/>
+		<result property="airlineTerminalCode" column="airline_terminal_code"/>
+		<result property="airportIataCode" column="airport_iata_code"/>
+		<result property="passengerTerminalCode" column="passenger_terminal_code"/>
+		<result property="runwayId" column="runway_id"/>
+		<result property="secureStandIsRequired" column="secure_stand_is_required"/>
+		<result property="standPosition" column="stand_position"/>
+		<result property="supplementaryInfomationText" column="supplementary_infomation_text"/>
+		<result property="supplementaryInfomationType" column="supplementary_infomation_type"/>
+		<result property="baggageMakeupCloseDateTime" column="baggage_makeup_close_date_time"/>
+		<result property="baggageMakeupOpenDateTime" column="baggage_makeup_open_date_time"/>
+		<result property="baggageMakeupPositionId" column="baggage_makeup_position_id"/>
+		<result property="baggageMakeupPositionRole" column="baggage_makeup_position_role"/>
+		<result property="baggageReclaimCarouselId" column="baggage_reclaim_carousel_id"/>
+		<result property="baggageReclaimCarouselRole" column="baggage_reclaim_carousel_role"/>
+		<result property="baggageReclaimCloseDt" column="baggage_reclaim_close_dt"/>
+		<result property="baggageReckaimOpenDt" column="baggage_reckaim_open_dt"/>
+		<result property="exitDoorNumber" column="exit_door_number"/>
+		<result property="firstBagDateTime" column="first_bag_date_time"/>
+		<result property="lastBagDateTime" column="last_bag_date_time"/>
+		<result property="baggageTerminalCode" column="baggage_terminal_code"/>
+		<result property="busIsRequired" column="bus_is_required"/>
+		<result property="checkinCloseDateTime" column="checkin_close_date_time"/>
+		<result property="checkinClusterId" column="checkin_cluster_id"/>
+		<result property="checkinDeskRange" column="checkin_desk_range"/>
+		<result property="checkinOpenDateTime" column="checkin_open_date_time"/>
+		<result property="checkinRole" column="checkin_role"/>
+		<result property="checkinTypeCode" column="checkin_type_code"/>
+		<result property="gateBoardingStatus" column="gate_boarding_status"/>
+		<result property="gateCloseDateTime" column="gate_close_date_time"/>
+		<result property="gateNumber" column="gate_number"/>
+		<result property="gateOpenDateTime" column="gate_open_date_time"/>
+		<result property="gateRole" column="gate_role"/>
+		<result property="remarkCode" column="remark_code"/>
+		<result property="remarkType" column="remark_type"/>
+		<result property="accountCode" column="account_code"/>
+		<result property="codeShareStatus" column="code_share_status"/>
+		<result property="divertAirportIataCode" column="divert_airport_iata_code"/>
+		<result property="flightCancelCode" column="flight_cancel_code"/>
+		<result property="flightClassificationCode" column="flight_classification_code"/>
+		<result property="flightNatureCode" column="flight_nature_code"/>
+		<result property="flightOperatesOvernight" column="flight_operates_overnight"/>
+		<result property="flightSectorCode" column="flight_sector_code"/>
+		<result property="flightServiceTypeIataCode" column="flight_service_type_iata_code"/>
+		<result property="flightStatusCode" column="flight_status_code"/>
+		<result property="flightTransitCode" column="flight_transit_code"/>
+		<result property="newFlightReason" column="new_flight_reason"/>
+		<result property="irregularityAlphaIataCode" column="irregularity_alpha_iata_code"/>
+		<result property="irregularityDuration" column="irregularity_duration"/>
+		<result property="irregularityNumericIataCode" column="irregularity_numeric_iata_code"/>
+		<result property="irregularityRole" column="irregularity_role"/>
+		<result property="isGeneralAviationFlight" column="is_general_aviation_flight"/>
+		<result property="isReturnFlight" column="is_return_flight"/>
+		<result property="isTransferFlight" column="is_transfer_flight"/>
+		<result property="linkedCarrierIataCode" column="linked_carrier_iata_code"/>
+		<result property="linkedFlightNumber" column="linked_flight_number"/>
+		<result property="linkedFlightSuffix" column="linked_flight_suffix"/>
+		<result property="linkedFlightIdentity" column="linked_flight_identity"/>
+		<result property="linkedFlightRepeatCount" column="linked_flight_repeat_count"/>
+		<result property="linkedScheduledDate" column="linked_scheduled_date"/>
+		<result property="masterCarrierIataCode" column="master_carrier_iata_code"/>
+		<result property="masterFlightNumber" column="master_flight_number"/>
+		<result property="masterFlightSuffix" column="master_flight_suffix"/>
+		<result property="masterFlightIdentity" column="master_flight_identity"/>
+		<result property="masterFlightRepeatCount" column="master_flight_repeat_count"/>
+		<result property="handlingAgentIataCode" column="handling_agent_iata_code"/>
+		<result property="handingAgentService" column="handing_agent_service"/>
+		<result property="operationTypeCode" column="operation_type_code"/>
+		<result property="operationTypeRole" column="operation_type_role"/>
+		<result property="sfCarrierIataCode" column="sf_carrier_iata_code"/>
+		<result property="sfFlightNumber" column="sf_flight_number"/>
+		<result property="sfFlightSuffix" column="sf_flight_suffix"/>
+		<result property="sfFlightIdentity" column="sf_flight_identity"/>
+		<result property="sfFlightRepeatCount" column="sf_flight_repeat_count"/>
+		<result property="transferFlightBagCount" column="transfer_flight_bag_count"/>
+		<result property="transferFlightIdentity" column="transfer_flight_identity"/>
+		<result property="transferFlightPassengerCt" column="transfer_flight_passenger_ct"/>
+		<result property="totalPassengerCount" column="total_passenger_count"/>
+		<result property="totalCrewCount" column="total_crew_count"/>
+		<result property="totalBaggageCount" column="total_baggage_count"/>
+		<result property="totalBaggageWeight" column="total_baggage_weight"/>
+		<result property="totalFreightWeight" column="total_freight_weight"/>
+		<result property="totalLoadWeight" column="total_load_weight"/>
+		<result property="totalMailWeight" column="total_mail_weight"/>
+		<result property="transferBaggageCount" column="transfer_baggage_count"/>
+		<result property="transferBaggageWeight" column="transfer_baggage_weight"/>
+		<result property="transferCargoWeight" column="transfer_cargo_weight"/>
+		<result property="transferMailWeight" column="transfer_mail_weight"/>
+		<result property="transitBaggageCount" column="transit_baggage_count"/>
+		<result property="transitBaggageWeight" column="transit_baggage_weight"/>
+		<result property="adultPassengerCount" column="adult_passenger_count"/>
+		<result property="businessClassPassengerCount" column="business_class_passenger_count"/>
+		<result property="childPassengerCount" column="child_passenger_count"/>
+		<result property="domesticPassengerCount" column="domestic_passenger_count"/>
+		<result property="economyClassPassengerCount" column="economy_class_passenger_count"/>
+		<result property="firstClassPassengerCount" column="first_class_passenger_count"/>
+		<result property="infantPassengerCount" column="infant_passenger_count"/>
+		<result property="internationalPassengerCount" column="international_passenger_count"/>
+		<result property="localPassengerCount" column="local_passenger_count"/>
+		<result property="nonTransferPassengerCount" column="non_transfer_passenger_count"/>
+		<result property="transferPassengerCount" column="transfer_passenger_count"/>
+		<result property="transitPassengerCount" column="transit_passenger_count"/>
+		<result property="wheelChairPassengerCount" column="wheel_chair_passenger_count"/>
+		<result property="actualOffBlocksDateTime" column="actual_off_blocks_date_time"/>
+		<result property="actualOnBlocksDateTime" column="actual_on_blocks_date_time"/>
+		<result property="estimatedDateTime" column="estimated_date_time"/>
+		<result property="estimatedFlightDuration" column="estimated_flight_duration"/>
+		<result property="finalApproachDateTime" column="final_approach_date_time"/>
+		<result property="latestKnownDateTime" column="latest_known_date_time"/>
+		<result property="latestKnownDateTimeSource" column="latest_known_date_time_source"/>
+		<result property="nextInformationDt" column="next_information_dt"/>
+		<result property="nextStationActualDt" column="next_station_actual_dt"/>
+		<result property="nextStationEstimatedDt" column="next_station_estimated_dt"/>
+		<result property="nextStationScheduledDt" column="next_station_scheduled_dt"/>
+		<result property="previousStationAirborneDt" column="previous_station_airborne_dt"/>
+		<result property="previousStationEstimatedDt" column="previous_station_estimated_dt"/>
+		<result property="previousStationScheduledDt" column="previous_station_scheduled_dt"/>
+		<result property="scheduledDateTime" column="scheduled_date_time"/>
+		<result property="tenMileOutDateTime" column="ten_mile_out_date_time"/>
+		<result property="wheelsDownDateTime" column="wheels_down_date_time"/>
+		<result property="wheelsUpDateTime" column="wheels_up_date_time"/>
+		<result property="portOfCallIataCode" column="port_of_call_iata_code"/>
+		<result property="portOfCallIcaoCode" column="port_of_call_icao_code"/>
+		<result property="publicFlightIdentity" column="public_flight_identity"/>
+		<result property="publicCarrierCode" column="public_carrier_code"/>
+		<result property="publicDateTime" column="public_date_time"/>
+		<result property="removed" column="removed"/>		
+	</resultMap>
+	
+	<insert id="insertAfdsInfo"  parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="id">
+       INSERT INTO afds_info(<include refid="insertKey"/>) VALUES(<include refid="insertValue"/>)    
+     </insert>	
+     
+     <update id="updateAfdsInfo" parameterType="java.util.Map">
+    	update afds_info  set <include refid="updateSet"/> where id =#{id}	    
+     </update>
+     
+     	
+	<sql id="insertKey">    
+        <trim suffixOverrides=",">    
+            <if test="flight_identity!=null">flight_identity,</if>
+			<if test="flight_direction!=null">flight_direction,</if>
+			<if test="flight_repeat_count!=null">flight_repeat_count,</if>
+			<if test="scheduled_date!=null">scheduled_date,</if>
+			<if test="iata_carrier_iata_code!=null">iata_carrier_iata_code,</if>
+			<if test="iata_flight_number!=null">iata_flight_number,</if>
+			<if test="iata_flight_suffix!=null">iata_flight_suffix,</if>
+			<if test="icao_carrier_icao_code!=null">icao_carrier_icao_code,</if>
+			<if test="icao_flight_number!=null">icao_flight_number,</if>
+			<if test="icao_flight_suffix!=null">icao_flight_suffix,</if>
+			<if test="aircraft_callsign!=null">aircraft_callsign,</if>
+			<if test="aircraft_owner_iata_code!=null">aircraft_owner_iata_code,</if>
+			<if test="aircraft_passenger_capacity!=null">aircraft_passenger_capacity,</if>
+			<if test="aircraft_registration!=null">aircraft_registration,</if>
+			<if test="aircraft_subtype_iata_code!=null">aircraft_subtype_iata_code,</if>
+			<if test="aircraft_type_icao_code!=null">aircraft_type_icao_code,</if>
+			<if test="aircraft_operator!=null">aircraft_operator,</if>
+			<if test="aircraft_terminal_code!=null">aircraft_terminal_code,</if>
+			<if test="airline_terminal_code!=null">airline_terminal_code,</if>
+			<if test="airport_iata_code!=null">airport_iata_code,</if>
+			<if test="passenger_terminal_code!=null">passenger_terminal_code,</if>
+			<if test="runway_id!=null">runway_id,</if>
+			<if test="secure_stand_is_required!=null">secure_stand_is_required,</if>
+			<if test="stand_position!=null">stand_position,</if>
+			<if test="supplementary_infomation_text!=null">supplementary_infomation_text,</if>
+			<if test="supplementary_infomation_type!=null">supplementary_infomation_type,</if>
+			<if test="baggage_makeup_close_date_time!=null">baggage_makeup_close_date_time,</if>
+			<if test="baggage_makeup_open_date_time!=null">baggage_makeup_open_date_time,</if>
+			<if test="baggage_makeup_position_id!=null">baggage_makeup_position_id,</if>
+			<if test="baggage_makeup_position_role!=null">baggage_makeup_position_role,</if>
+			<if test="baggage_reclaim_carousel_id!=null">baggage_reclaim_carousel_id,</if>
+			<if test="baggage_reclaim_carousel_role!=null">baggage_reclaim_carousel_role,</if>
+			<if test="baggage_reclaim_close_dt!=null">baggage_reclaim_close_dt,</if>
+			<if test="baggage_reckaim_open_dt!=null">baggage_reckaim_open_dt,</if>
+			<if test="exit_door_number!=null">exit_door_number,</if>
+			<if test="first_bag_date_time!=null">first_bag_date_time,</if>
+			<if test="last_bag_date_time!=null">last_bag_date_time,</if>
+			<if test="baggage_terminal_code!=null">baggage_terminal_code,</if>
+			<if test="bus_is_required!=null">bus_is_required,</if>
+			<if test="checkin_close_date_time!=null">checkin_close_date_time,</if>
+			<if test="checkin_cluster_id!=null">checkin_cluster_id,</if>
+			<if test="checkin_desk_range!=null">checkin_desk_range,</if>
+			<if test="checkin_open_date_time!=null">checkin_open_date_time,</if>
+			<if test="checkin_role!=null">checkin_role,</if>
+			<if test="checkin_type_code!=null">checkin_type_code,</if>
+			<if test="gate_boarding_status!=null">gate_boarding_status,</if>
+			<if test="gate_close_date_time!=null">gate_close_date_time,</if>
+			<if test="gate_number!=null">gate_number,</if>
+			<if test="gate_open_date_time!=null">gate_open_date_time,</if>
+			<if test="gate_role!=null">gate_role,</if>
+			<if test="remark_code!=null">remark_code,</if>
+			<if test="remark_type!=null">remark_type,</if>
+			<if test="account_code!=null">account_code,</if>
+			<if test="code_share_status!=null">code_share_status,</if>
+			<if test="divert_airport_iata_code!=null">divert_airport_iata_code,</if>
+			<if test="flight_cancel_code!=null">flight_cancel_code,</if>
+			<if test="flight_classification_code!=null">flight_classification_code,</if>
+			<if test="flight_nature_code!=null">flight_nature_code,</if>
+			<if test="flight_operates_overnight!=null">flight_operates_overnight,</if>
+			<if test="flight_sector_code!=null">flight_sector_code,</if>
+			<if test="flight_service_type_iata_code!=null">flight_service_type_iata_code,</if>
+			<if test="flight_status_code!=null">flight_status_code,</if>
+			<if test="flight_transit_code!=null">flight_transit_code,</if>
+			<if test="new_flight_reason!=null">new_flight_reason,</if>
+			<if test="irregularity_alpha_iata_code!=null">irregularity_alpha_iata_code,</if>
+			<if test="irregularity_duration!=null">irregularity_duration,</if>
+			<if test="irregularity_numeric_iata_code!=null">irregularity_numeric_iata_code,</if>
+			<if test="irregularity_role!=null">irregularity_role,</if>
+			<if test="is_general_aviation_flight!=null">is_general_aviation_flight,</if>
+			<if test="is_return_flight!=null">is_return_flight,</if>
+			<if test="is_transfer_flight!=null">is_transfer_flight,</if>
+			<if test="linked_carrier_iata_code!=null">linked_carrier_iata_code,</if>
+			<if test="linked_flight_number!=null">linked_flight_number,</if>
+			<if test="linked_flight_suffix!=null">linked_flight_suffix,</if>
+			<if test="linked_flight_identity!=null">linked_flight_identity,</if>
+			<if test="linked_flight_repeat_count!=null">linked_flight_repeat_count,</if>
+			<if test="linked_scheduled_date!=null">linked_scheduled_date,</if>
+			<if test="master_carrier_iata_code!=null">master_carrier_iata_code,</if>
+			<if test="master_flight_number!=null">master_flight_number,</if>
+			<if test="master_flight_suffix!=null">master_flight_suffix,</if>
+			<if test="master_flight_identity!=null">master_flight_identity,</if>
+			<if test="master_flight_repeat_count!=null">master_flight_repeat_count,</if>
+			<if test="handling_agent_iata_code!=null">handling_agent_iata_code,</if>
+			<if test="handing_agent_service!=null">handing_agent_service,</if>
+			<if test="operation_type_code!=null">operation_type_code,</if>
+			<if test="operation_type_role!=null">operation_type_role,</if>
+			<if test="sf_carrier_iata_code!=null">sf_carrier_iata_code,</if>
+			<if test="sf_flight_number!=null">sf_flight_number,</if>
+			<if test="sf_flight_suffix!=null">sf_flight_suffix,</if>
+			<if test="sf_flight_identity!=null">sf_flight_identity,</if>
+			<if test="sf_flight_repeat_count!=null">sf_flight_repeat_count,</if>
+			<if test="transfer_flight_bag_count!=null">transfer_flight_bag_count,</if>
+			<if test="transfer_flight_identity!=null">transfer_flight_identity,</if>
+			<if test="transfer_flight_passenger_ct!=null">transfer_flight_passenger_ct,</if>
+			<if test="total_passenger_count!=null">total_passenger_count,</if>
+			<if test="total_crew_count!=null">total_crew_count,</if>
+			<if test="total_baggage_count!=null">total_baggage_count,</if>
+			<if test="total_baggage_weight!=null">total_baggage_weight,</if>
+			<if test="total_freight_weight!=null">total_freight_weight,</if>
+			<if test="total_load_weight!=null">total_load_weight,</if>
+			<if test="total_mail_weight!=null">total_mail_weight,</if>
+			<if test="transfer_baggage_count!=null">transfer_baggage_count,</if>
+			<if test="transfer_baggage_weight!=null">transfer_baggage_weight,</if>
+			<if test="transfer_cargo_weight!=null">transfer_cargo_weight,</if>
+			<if test="transfer_mail_weight!=null">transfer_mail_weight,</if>
+			<if test="transit_baggage_count!=null">transit_baggage_count,</if>
+			<if test="transit_baggage_weight!=null">transit_baggage_weight,</if>
+			<if test="adult_passenger_count!=null">adult_passenger_count,</if>
+			<if test="business_class_passenger_count!=null">business_class_passenger_count,</if>
+			<if test="child_passenger_count!=null">child_passenger_count,</if>
+			<if test="domestic_passenger_count!=null">domestic_passenger_count,</if>
+			<if test="economy_class_passenger_count!=null">economy_class_passenger_count,</if>
+			<if test="first_class_passenger_count!=null">first_class_passenger_count,</if>
+			<if test="infant_passenger_count!=null">infant_passenger_count,</if>
+			<if test="international_passenger_count!=null">international_passenger_count,</if>
+			<if test="local_passenger_count!=null">local_passenger_count,</if>
+			<if test="non_transfer_passenger_count!=null">non_transfer_passenger_count,</if>
+			<if test="transfer_passenger_count!=null">transfer_passenger_count,</if>
+			<if test="transit_passenger_count!=null">transit_passenger_count,</if>
+			<if test="wheel_chair_passenger_count!=null">wheel_chair_passenger_count,</if>
+			<if test="actual_off_blocks_date_time!=null">actual_off_blocks_date_time,</if>
+			<if test="actual_on_blocks_date_time!=null">actual_on_blocks_date_time,</if>
+			<if test="estimated_date_time!=null">estimated_date_time,</if>
+			<if test="estimated_flight_duration!=null">estimated_flight_duration,</if>
+			<if test="final_approach_date_time!=null">final_approach_date_time,</if>
+			<if test="latest_known_date_time!=null">latest_known_date_time,</if>
+			<if test="latest_known_date_time_source!=null">latest_known_date_time_source,</if>
+			<if test="next_information_dt!=null">next_information_dt,</if>
+			<if test="next_station_actual_dt!=null">next_station_actual_dt,</if>
+			<if test="next_station_estimated_dt!=null">next_station_estimated_dt,</if>
+			<if test="next_station_scheduled_dt!=null">next_station_scheduled_dt,</if>
+			<if test="previous_station_airborne_dt!=null">previous_station_airborne_dt,</if>
+			<if test="previous_station_estimated_dt!=null">previous_station_estimated_dt,</if>
+			<if test="previous_station_scheduled_dt!=null">previous_station_scheduled_dt,</if>
+			<if test="scheduled_date_time!=null">scheduled_date_time,</if>
+			<if test="ten_mile_out_date_time!=null">ten_mile_out_date_time,</if>
+			<if test="wheels_down_date_time!=null">wheels_down_date_time,</if>
+			<if test="wheels_up_date_time!=null">wheels_up_date_time,</if>
+			<if test="port_of_call_iata_code!=null">port_of_call_iata_code,</if>
+			<if test="port_of_call_icao_code!=null">port_of_call_icao_code,</if>
+			<if test="public_flight_identity!=null">public_flight_identity,</if>
+			<if test="public_carrier_code!=null">public_carrier_code,</if>
+			<if test="public_date_time!=null">public_date_time,</if>    
+        </trim>    
+    </sql>    
+        
+    <sql id="insertValue">    
+        <trim suffixOverrides=",">    
+			<if test="flight_identity!=null">#{flight_identity},</if>
+			<if test="flight_direction!=null">#{flight_direction},</if>
+			<if test="flight_repeat_count!=null">#{flight_repeat_count},</if>
+			<if test="scheduled_date!=null">#{scheduled_date},</if>
+			<if test="iata_carrier_iata_code!=null">#{iata_carrier_iata_code},</if>
+			<if test="iata_flight_number!=null">#{iata_flight_number},</if>
+			<if test="iata_flight_suffix!=null">#{iata_flight_suffix},</if>
+			<if test="icao_carrier_icao_code!=null">#{icao_carrier_icao_code},</if>
+			<if test="icao_flight_number!=null">#{icao_flight_number},</if>
+			<if test="icao_flight_suffix!=null">#{icao_flight_suffix},</if>
+			<if test="aircraft_callsign!=null">#{aircraft_callsign},</if>
+			<if test="aircraft_owner_iata_code!=null">#{aircraft_owner_iata_code},</if>
+			<if test="aircraft_passenger_capacity!=null">#{aircraft_passenger_capacity},</if>
+			<if test="aircraft_registration!=null">#{aircraft_registration},</if>
+			<if test="aircraft_subtype_iata_code!=null">#{aircraft_subtype_iata_code},</if>
+			<if test="aircraft_type_icao_code!=null">#{aircraft_type_icao_code},</if>
+			<if test="aircraft_operator!=null">#{aircraft_operator},</if>
+			<if test="aircraft_terminal_code!=null">#{aircraft_terminal_code},</if>
+			<if test="airline_terminal_code!=null">#{airline_terminal_code},</if>
+			<if test="airport_iata_code!=null">#{airport_iata_code},</if>
+			<if test="passenger_terminal_code!=null">#{passenger_terminal_code},</if>
+			<if test="runway_id!=null">#{runway_id},</if>
+			<if test="secure_stand_is_required!=null">#{secure_stand_is_required},</if>
+			<if test="stand_position!=null">#{stand_position},</if>
+			<if test="supplementary_infomation_text!=null">#{supplementary_infomation_text},</if>
+			<if test="supplementary_infomation_type!=null">#{supplementary_infomation_type},</if>
+			<if test="baggage_makeup_close_date_time!=null">#{baggage_makeup_close_date_time},</if>
+			<if test="baggage_makeup_open_date_time!=null">#{baggage_makeup_open_date_time},</if>
+			<if test="baggage_makeup_position_id!=null">#{baggage_makeup_position_id},</if>
+			<if test="baggage_makeup_position_role!=null">#{baggage_makeup_position_role},</if>
+			<if test="baggage_reclaim_carousel_id!=null">#{baggage_reclaim_carousel_id},</if>
+			<if test="baggage_reclaim_carousel_role!=null">#{baggage_reclaim_carousel_role},</if>
+			<if test="baggage_reclaim_close_dt!=null">#{baggage_reclaim_close_dt},</if>
+			<if test="baggage_reckaim_open_dt!=null">#{baggage_reckaim_open_dt},</if>
+			<if test="exit_door_number!=null">#{exit_door_number},</if>
+			<if test="first_bag_date_time!=null">#{first_bag_date_time},</if>
+			<if test="last_bag_date_time!=null">#{last_bag_date_time},</if>
+			<if test="baggage_terminal_code!=null">#{baggage_terminal_code},</if>
+			<if test="bus_is_required!=null">#{bus_is_required},</if>
+			<if test="checkin_close_date_time!=null">#{checkin_close_date_time},</if>
+			<if test="checkin_cluster_id!=null">#{checkin_cluster_id},</if>
+			<if test="checkin_desk_range!=null">#{checkin_desk_range},</if>
+			<if test="checkin_open_date_time!=null">#{checkin_open_date_time},</if>
+			<if test="checkin_role!=null">#{checkin_role},</if>
+			<if test="checkin_type_code!=null">#{checkin_type_code},</if>
+			<if test="gate_boarding_status!=null">#{gate_boarding_status},</if>
+			<if test="gate_close_date_time!=null">#{gate_close_date_time},</if>
+			<if test="gate_number!=null">#{gate_number},</if>
+			<if test="gate_open_date_time!=null">#{gate_open_date_time},</if>
+			<if test="gate_role!=null">#{gate_role},</if>
+			<if test="remark_code!=null">#{remark_code},</if>
+			<if test="remark_type!=null">#{remark_type},</if>
+			<if test="account_code!=null">#{account_code},</if>
+			<if test="code_share_status!=null">#{code_share_status},</if>
+			<if test="divert_airport_iata_code!=null">#{divert_airport_iata_code},</if>
+			<if test="flight_cancel_code!=null">#{flight_cancel_code},</if>
+			<if test="flight_classification_code!=null">#{flight_classification_code},</if>
+			<if test="flight_nature_code!=null">#{flight_nature_code},</if>
+			<if test="flight_operates_overnight!=null">#{flight_operates_overnight},</if>
+			<if test="flight_sector_code!=null">#{flight_sector_code},</if>
+			<if test="flight_service_type_iata_code!=null">#{flight_service_type_iata_code},</if>
+			<if test="flight_status_code!=null">#{flight_status_code},</if>
+			<if test="flight_transit_code!=null">#{flight_transit_code},</if>
+			<if test="new_flight_reason!=null">#{new_flight_reason},</if>
+			<if test="irregularity_alpha_iata_code!=null">#{irregularity_alpha_iata_code},</if>
+			<if test="irregularity_duration!=null">#{irregularity_duration},</if>
+			<if test="irregularity_numeric_iata_code!=null">#{irregularity_numeric_iata_code},</if>
+			<if test="irregularity_role!=null">#{irregularity_role},</if>
+			<if test="is_general_aviation_flight!=null">#{is_general_aviation_flight},</if>
+			<if test="is_return_flight!=null">#{is_return_flight},</if>
+			<if test="is_transfer_flight!=null">#{is_transfer_flight},</if>
+			<if test="linked_carrier_iata_code!=null">#{linked_carrier_iata_code},</if>
+			<if test="linked_flight_number!=null">#{linked_flight_number},</if>
+			<if test="linked_flight_suffix!=null">#{linked_flight_suffix},</if>
+			<if test="linked_flight_identity!=null">#{linked_flight_identity},</if>
+			<if test="linked_flight_repeat_count!=null">#{linked_flight_repeat_count},</if>
+			<if test="linked_scheduled_date!=null">#{linked_scheduled_date},</if>
+			<if test="master_carrier_iata_code!=null">#{master_carrier_iata_code},</if>
+			<if test="master_flight_number!=null">#{master_flight_number},</if>
+			<if test="master_flight_suffix!=null">#{master_flight_suffix},</if>
+			<if test="master_flight_identity!=null">#{master_flight_identity},</if>
+			<if test="master_flight_repeat_count!=null">#{master_flight_repeat_count},</if>
+			<if test="handling_agent_iata_code!=null">#{handling_agent_iata_code},</if>
+			<if test="handing_agent_service!=null">#{handing_agent_service},</if>
+			<if test="operation_type_code!=null">#{operation_type_code},</if>
+			<if test="operation_type_role!=null">#{operation_type_role},</if>
+			<if test="sf_carrier_iata_code!=null">#{sf_carrier_iata_code},</if>
+			<if test="sf_flight_number!=null">#{sf_flight_number},</if>
+			<if test="sf_flight_suffix!=null">#{sf_flight_suffix},</if>
+			<if test="sf_flight_identity!=null">#{sf_flight_identity},</if>
+			<if test="sf_flight_repeat_count!=null">#{sf_flight_repeat_count},</if>
+			<if test="transfer_flight_bag_count!=null">#{transfer_flight_bag_count},</if>
+			<if test="transfer_flight_identity!=null">#{transfer_flight_identity},</if>
+			<if test="transfer_flight_passenger_ct!=null">#{transfer_flight_passenger_ct},</if>
+			<if test="total_passenger_count!=null">#{total_passenger_count},</if>
+			<if test="total_crew_count!=null">#{total_crew_count},</if>
+			<if test="total_baggage_count!=null">#{total_baggage_count},</if>
+			<if test="total_baggage_weight!=null">#{total_baggage_weight},</if>
+			<if test="total_freight_weight!=null">#{total_freight_weight},</if>
+			<if test="total_load_weight!=null">#{total_load_weight},</if>
+			<if test="total_mail_weight!=null">#{total_mail_weight},</if>
+			<if test="transfer_baggage_count!=null">#{transfer_baggage_count},</if>
+			<if test="transfer_baggage_weight!=null">#{transfer_baggage_weight},</if>
+			<if test="transfer_cargo_weight!=null">#{transfer_cargo_weight},</if>
+			<if test="transfer_mail_weight!=null">#{transfer_mail_weight},</if>
+			<if test="transit_baggage_count!=null">#{transit_baggage_count},</if>
+			<if test="transit_baggage_weight!=null">#{transit_baggage_weight},</if>
+			<if test="adult_passenger_count!=null">#{adult_passenger_count},</if>
+			<if test="business_class_passenger_count!=null">#{business_class_passenger_count},</if>
+			<if test="child_passenger_count!=null">#{child_passenger_count},</if>
+			<if test="domestic_passenger_count!=null">#{domestic_passenger_count},</if>
+			<if test="economy_class_passenger_count!=null">#{economy_class_passenger_count},</if>
+			<if test="first_class_passenger_count!=null">#{first_class_passenger_count},</if>
+			<if test="infant_passenger_count!=null">#{infant_passenger_count},</if>
+			<if test="international_passenger_count!=null">#{international_passenger_count},</if>
+			<if test="local_passenger_count!=null">#{local_passenger_count},</if>
+			<if test="non_transfer_passenger_count!=null">#{non_transfer_passenger_count},</if>
+			<if test="transfer_passenger_count!=null">#{transfer_passenger_count},</if>
+			<if test="transit_passenger_count!=null">#{transit_passenger_count},</if>
+			<if test="wheel_chair_passenger_count!=null">#{wheel_chair_passenger_count},</if>
+			<if test="actual_off_blocks_date_time!=null">#{actual_off_blocks_date_time},</if>
+			<if test="actual_on_blocks_date_time!=null">#{actual_on_blocks_date_time},</if>
+			<if test="estimated_date_time!=null">#{estimated_date_time},</if>
+			<if test="estimated_flight_duration!=null">#{estimated_flight_duration},</if>
+			<if test="final_approach_date_time!=null">#{final_approach_date_time},</if>
+			<if test="latest_known_date_time!=null">#{latest_known_date_time},</if>
+			<if test="latest_known_date_time_source!=null">#{latest_known_date_time_source},</if>
+			<if test="next_information_dt!=null">#{next_information_dt},</if>
+			<if test="next_station_actual_dt!=null">#{next_station_actual_dt},</if>
+			<if test="next_station_estimated_dt!=null">#{next_station_estimated_dt},</if>
+			<if test="next_station_scheduled_dt!=null">#{next_station_scheduled_dt},</if>
+			<if test="previous_station_airborne_dt!=null">#{previous_station_airborne_dt},</if>
+			<if test="previous_station_estimated_dt!=null">#{previous_station_estimated_dt},</if>
+			<if test="previous_station_scheduled_dt!=null">#{previous_station_scheduled_dt},</if>
+			<if test="scheduled_date_time!=null">#{scheduled_date_time},</if>
+			<if test="ten_mile_out_date_time!=null">#{ten_mile_out_date_time},</if>
+			<if test="wheels_down_date_time!=null">#{wheels_down_date_time},</if>
+			<if test="wheels_up_date_time!=null">#{wheels_up_date_time},</if>
+			<if test="port_of_call_iata_code!=null">#{port_of_call_iata_code},</if>
+			<if test="port_of_call_icao_code!=null">#{port_of_call_icao_code},</if>
+			<if test="public_flight_identity!=null">#{public_flight_identity},</if>
+			<if test="public_carrier_code!=null">#{public_carrier_code},</if>
+			<if test="public_date_time!=null">#{public_date_time},</if>    
+        </trim>    
+    </sql> 
+    
+    <sql id="updateSet">
+    	<trim suffixOverrides=",">
+			<if test="flight_identity!=null">flight_identity=#{flight_identity},</if>		    
+			<if test="flight_direction!=null">flight_direction=#{flight_direction},</if>
+			<if test="flight_repeat_count!=null">flight_repeat_count=#{flight_repeat_count},</if>
+			<if test="scheduled_date!=null">scheduled_date=#{scheduled_date},</if>
+			<if test="iata_carrier_iata_code!=null">iata_carrier_iata_code=#{iata_carrier_iata_code},</if>
+			<if test="iata_flight_number!=null">iata_flight_number=#{iata_flight_number},</if>
+			<if test="iata_flight_suffix!=null">iata_flight_suffix=#{iata_flight_suffix},</if>
+			<if test="icao_carrier_icao_code!=null">icao_carrier_icao_code=#{icao_carrier_icao_code},</if>
+			<if test="icao_flight_number!=null">icao_flight_number=#{icao_flight_number},</if>
+			<if test="icao_flight_suffix!=null">icao_flight_suffix=#{icao_flight_suffix},</if>
+			<if test="aircraft_callsign!=null">aircraft_callsign=#{aircraft_callsign},</if>
+			<if test="aircraft_owner_iata_code!=null">aircraft_owner_iata_code=#{aircraft_owner_iata_code},</if>
+			<if test="aircraft_passenger_capacity!=null">aircraft_passenger_capacity=#{aircraft_passenger_capacity},</if>
+			<if test="aircraft_registration!=null">aircraft_registration=#{aircraft_registration},</if>
+			<if test="aircraft_subtype_iata_code!=null">aircraft_subtype_iata_code=#{aircraft_subtype_iata_code},</if>
+			<if test="aircraft_type_icao_code!=null">aircraft_type_icao_code=#{aircraft_type_icao_code},</if>
+			<if test="aircraft_operator!=null">aircraft_operator=#{aircraft_operator},</if>
+			<if test="aircraft_terminal_code!=null">aircraft_terminal_code=#{aircraft_terminal_code},</if>
+			<if test="airline_terminal_code!=null">airline_terminal_code=#{airline_terminal_code},</if>
+			<if test="airport_iata_code!=null">airport_iata_code=#{airport_iata_code},</if>
+			<if test="passenger_terminal_code!=null">passenger_terminal_code=#{passenger_terminal_code},</if>
+			<if test="runway_id!=null">runway_id=#{runway_id},</if>
+			<if test="secure_stand_is_required!=null">secure_stand_is_required=#{secure_stand_is_required},</if>
+			<if test="stand_position!=null">stand_position=#{stand_position},</if>
+			<if test="supplementary_infomation_text!=null">supplementary_infomation_text=#{supplementary_infomation_text},</if>
+			<if test="supplementary_infomation_type!=null">supplementary_infomation_type=#{supplementary_infomation_type},</if>
+			<if test="baggage_makeup_close_date_time!=null">baggage_makeup_close_date_time=#{baggage_makeup_close_date_time},</if>
+			<if test="baggage_makeup_open_date_time!=null">baggage_makeup_open_date_time=#{baggage_makeup_open_date_time},</if>
+			<if test="baggage_makeup_position_id!=null">baggage_makeup_position_id=#{baggage_makeup_position_id},</if>
+			<if test="baggage_makeup_position_role!=null">baggage_makeup_position_role=#{baggage_makeup_position_role},</if>
+			<if test="baggage_reclaim_carousel_id!=null">baggage_reclaim_carousel_id=#{baggage_reclaim_carousel_id},</if>
+			<if test="baggage_reclaim_carousel_role!=null">baggage_reclaim_carousel_role=#{baggage_reclaim_carousel_role},</if>
+			<if test="baggage_reclaim_close_dt!=null">baggage_reclaim_close_dt=#{baggage_reclaim_close_dt},</if>
+			<if test="baggage_reckaim_open_dt!=null">baggage_reckaim_open_dt=#{baggage_reckaim_open_dt},</if>
+			<if test="exit_door_number!=null">exit_door_number=#{exit_door_number},</if>
+			<if test="first_bag_date_time!=null">first_bag_date_time=#{first_bag_date_time},</if>
+			<if test="last_bag_date_time!=null">last_bag_date_time=#{last_bag_date_time},</if>
+			<if test="baggage_terminal_code!=null">baggage_terminal_code=#{baggage_terminal_code},</if>
+			<if test="bus_is_required!=null">bus_is_required=#{bus_is_required},</if>
+			<if test="checkin_close_date_time!=null">checkin_close_date_time=#{checkin_close_date_time},</if>
+			<if test="checkin_cluster_id!=null">checkin_cluster_id=#{checkin_cluster_id},</if>
+			<if test="checkin_desk_range!=null">checkin_desk_range=#{checkin_desk_range},</if>
+			<if test="checkin_open_date_time!=null">checkin_open_date_time=#{checkin_open_date_time},</if>
+			<if test="checkin_role!=null">checkin_role=#{checkin_role},</if>
+			<if test="checkin_type_code!=null">checkin_type_code=#{checkin_type_code},</if>
+			<if test="gate_boarding_status!=null">gate_boarding_status=#{gate_boarding_status},</if>
+			<if test="gate_close_date_time!=null">gate_close_date_time=#{gate_close_date_time},</if>
+			<if test="gate_number!=null">gate_number=#{gate_number},</if>
+			<if test="gate_open_date_time!=null">gate_open_date_time=#{gate_open_date_time},</if>
+			<if test="gate_role!=null">gate_role=#{gate_role},</if>
+			<if test="remark_code!=null">remark_code=#{remark_code},</if>
+			<if test="remark_type!=null">remark_type=#{remark_type},</if>
+			<if test="account_code!=null">account_code=#{account_code},</if>
+			<if test="code_share_status!=null">code_share_status=#{code_share_status},</if>
+			<if test="divert_airport_iata_code!=null">divert_airport_iata_code=#{divert_airport_iata_code},</if>
+			<if test="flight_cancel_code!=null">flight_cancel_code=#{flight_cancel_code},</if>
+			<if test="flight_classification_code!=null">flight_classification_code=#{flight_classification_code},</if>
+			<if test="flight_nature_code!=null">flight_nature_code=#{flight_nature_code},</if>
+			<if test="flight_operates_overnight!=null">flight_operates_overnight=#{flight_operates_overnight},</if>
+			<if test="flight_sector_code!=null">flight_sector_code=#{flight_sector_code},</if>
+			<if test="flight_service_type_iata_code!=null">flight_service_type_iata_code=#{flight_service_type_iata_code},</if>
+			<if test="flight_status_code!=null">flight_status_code=#{flight_status_code},</if>
+			<if test="flight_transit_code!=null">flight_transit_code=#{flight_transit_code},</if>
+			<if test="new_flight_reason!=null">new_flight_reason=#{new_flight_reason},</if>
+			<if test="irregularity_alpha_iata_code!=null">irregularity_alpha_iata_code=#{irregularity_alpha_iata_code},</if>
+			<if test="irregularity_duration!=null">irregularity_duration=#{irregularity_duration},</if>
+			<if test="irregularity_numeric_iata_code!=null">irregularity_numeric_iata_code=#{irregularity_numeric_iata_code},</if>
+			<if test="irregularity_role!=null">irregularity_role=#{irregularity_role},</if>
+			<if test="is_general_aviation_flight!=null">is_general_aviation_flight=#{is_general_aviation_flight},</if>
+			<if test="is_return_flight!=null">is_return_flight=#{is_return_flight},</if>
+			<if test="is_transfer_flight!=null">is_transfer_flight=#{is_transfer_flight},</if>
+			<if test="linked_carrier_iata_code!=null">linked_carrier_iata_code=#{linked_carrier_iata_code},</if>
+			<if test="linked_flight_number!=null">linked_flight_number=#{linked_flight_number},</if>
+			<if test="linked_flight_suffix!=null">linked_flight_suffix=#{linked_flight_suffix},</if>
+			<if test="linked_flight_identity!=null">linked_flight_identity=#{linked_flight_identity},</if>
+			<if test="linked_flight_repeat_count!=null">linked_flight_repeat_count=#{linked_flight_repeat_count},</if>
+			<if test="linked_scheduled_date!=null">linked_scheduled_date=#{linked_scheduled_date},</if>
+			<if test="master_carrier_iata_code!=null">master_carrier_iata_code=#{master_carrier_iata_code},</if>
+			<if test="master_flight_number!=null">master_flight_number=#{master_flight_number},</if>
+			<if test="master_flight_suffix!=null">master_flight_suffix=#{master_flight_suffix},</if>
+			<if test="master_flight_identity!=null">master_flight_identity=#{master_flight_identity},</if>
+			<if test="master_flight_repeat_count!=null">master_flight_repeat_count=#{master_flight_repeat_count},</if>
+			<if test="handling_agent_iata_code!=null">handling_agent_iata_code=#{handling_agent_iata_code},</if>
+			<if test="handing_agent_service!=null">handing_agent_service=#{handing_agent_service},</if>
+			<if test="operation_type_code!=null">operation_type_code=#{operation_type_code},</if>
+			<if test="operation_type_role!=null">operation_type_role=#{operation_type_role},</if>
+			<if test="sf_carrier_iata_code!=null">sf_carrier_iata_code=#{sf_carrier_iata_code},</if>
+			<if test="sf_flight_number!=null">sf_flight_number=#{sf_flight_number},</if>
+			<if test="sf_flight_suffix!=null">sf_flight_suffix=#{sf_flight_suffix},</if>
+			<if test="sf_flight_identity!=null">sf_flight_identity=#{sf_flight_identity},</if>
+			<if test="sf_flight_repeat_count!=null">sf_flight_repeat_count=#{sf_flight_repeat_count},</if>
+			<if test="transfer_flight_bag_count!=null">transfer_flight_bag_count=#{transfer_flight_bag_count},</if>
+			<if test="transfer_flight_identity!=null">transfer_flight_identity=#{transfer_flight_identity},</if>
+			<if test="transfer_flight_passenger_ct!=null">transfer_flight_passenger_ct=#{transfer_flight_passenger_ct},</if>
+			<if test="total_passenger_count!=null">total_passenger_count=#{total_passenger_count},</if>
+			<if test="total_crew_count!=null">total_crew_count=#{total_crew_count},</if>
+			<if test="total_baggage_count!=null">total_baggage_count=#{total_baggage_count},</if>
+			<if test="total_baggage_weight!=null">total_baggage_weight=#{total_baggage_weight},</if>
+			<if test="total_freight_weight!=null">total_freight_weight=#{total_freight_weight},</if>
+			<if test="total_load_weight!=null">total_load_weight=#{total_load_weight},</if>
+			<if test="total_mail_weight!=null">total_mail_weight=#{total_mail_weight},</if>
+			<if test="transfer_baggage_count!=null">transfer_baggage_count=#{transfer_baggage_count},</if>
+			<if test="transfer_baggage_weight!=null">transfer_baggage_weight=#{transfer_baggage_weight},</if>
+			<if test="transfer_cargo_weight!=null">transfer_cargo_weight=#{transfer_cargo_weight},</if>
+			<if test="transfer_mail_weight!=null">transfer_mail_weight=#{transfer_mail_weight},</if>
+			<if test="transit_baggage_count!=null">transit_baggage_count=#{transit_baggage_count},</if>
+			<if test="transit_baggage_weight!=null">transit_baggage_weight=#{transit_baggage_weight},</if>
+			<if test="adult_passenger_count!=null">adult_passenger_count=#{adult_passenger_count},</if>
+			<if test="business_class_passenger_count!=null">business_class_passenger_count=#{business_class_passenger_count},</if>
+			<if test="child_passenger_count!=null">child_passenger_count=#{child_passenger_count},</if>
+			<if test="domestic_passenger_count!=null">domestic_passenger_count=#{domestic_passenger_count},</if>
+			<if test="economy_class_passenger_count!=null">economy_class_passenger_count=#{economy_class_passenger_count},</if>
+			<if test="first_class_passenger_count!=null">first_class_passenger_count=#{first_class_passenger_count},</if>
+			<if test="infant_passenger_count!=null">infant_passenger_count=#{infant_passenger_count},</if>
+			<if test="international_passenger_count!=null">international_passenger_count=#{international_passenger_count},</if>
+			<if test="local_passenger_count!=null">local_passenger_count=#{local_passenger_count},</if>
+			<if test="non_transfer_passenger_count!=null">non_transfer_passenger_count=#{non_transfer_passenger_count},</if>
+			<if test="transfer_passenger_count!=null">transfer_passenger_count=#{transfer_passenger_count},</if>
+			<if test="transit_passenger_count!=null">transit_passenger_count=#{transit_passenger_count},</if>
+			<if test="wheel_chair_passenger_count!=null">wheel_chair_passenger_count=#{wheel_chair_passenger_count},</if>
+			<if test="actual_off_blocks_date_time!=null">actual_off_blocks_date_time=#{actual_off_blocks_date_time},</if>
+			<if test="actual_on_blocks_date_time!=null">actual_on_blocks_date_time=#{actual_on_blocks_date_time},</if>
+			<if test="estimated_date_time!=null">estimated_date_time=#{estimated_date_time},</if>
+			<if test="estimated_flight_duration!=null">estimated_flight_duration=#{estimated_flight_duration},</if>
+			<if test="final_approach_date_time!=null">final_approach_date_time=#{final_approach_date_time},</if>
+			<if test="latest_known_date_time!=null">latest_known_date_time=#{latest_known_date_time},</if>
+			<if test="latest_known_date_time_source!=null">latest_known_date_time_source=#{latest_known_date_time_source},</if>
+			<if test="next_information_dt!=null">next_information_dt=#{next_information_dt},</if>
+			<if test="next_station_actual_dt!=null">next_station_actual_dt=#{next_station_actual_dt},</if>
+			<if test="next_station_estimated_dt!=null">next_station_estimated_dt=#{next_station_estimated_dt},</if>
+			<if test="next_station_scheduled_dt!=null">next_station_scheduled_dt=#{next_station_scheduled_dt},</if>
+			<if test="previous_station_airborne_dt!=null">previous_station_airborne_dt=#{previous_station_airborne_dt},</if>
+			<if test="previous_station_estimated_dt!=null">previous_station_estimated_dt=#{previous_station_estimated_dt},</if>
+			<if test="previous_station_scheduled_dt!=null">previous_station_scheduled_dt=#{previous_station_scheduled_dt},</if>
+			<if test="scheduled_date_time!=null">scheduled_date_time=#{scheduled_date_time},</if>
+			<if test="ten_mile_out_date_time!=null">ten_mile_out_date_time=#{ten_mile_out_date_time},</if>
+			<if test="wheels_down_date_time!=null">wheels_down_date_time=#{wheels_down_date_time},</if>
+			<if test="wheels_up_date_time!=null">wheels_up_date_time=#{wheels_up_date_time},</if>
+			<if test="port_of_call_iata_code!=null">port_of_call_iata_code=#{port_of_call_iata_code},</if>
+			<if test="port_of_call_icao_code!=null">port_of_call_icao_code=#{port_of_call_icao_code},</if>
+			<if test="public_flight_identity!=null">public_flight_identity=#{public_flight_identity},</if>
+			<if test="public_carrier_code!=null">public_carrier_code=#{public_carrier_code},</if>
+			<if test="public_date_time!=null">public_date_time=#{public_date_time},</if>
+	    </trim>	    
+    </sql>
+
+      
+
+</mapper>

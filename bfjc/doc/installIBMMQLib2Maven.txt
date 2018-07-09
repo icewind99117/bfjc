@@ -1,0 +1,20 @@
+ 
+mvn install:install-file -Dfile=com.ibm.mq.commonservices.jar -DgroupId=com.ibm.mq -DartifactId=commonservices -Dversion=7.0 -Dpackaging=jar  
+  
+mvn install:install-file -Dfile=com.ibm.mq.headers.jar -DgroupId=com.ibm.mq -DartifactId=headers -Dversion=7.0 -Dpackaging=jar  
+  
+mvn install:install-file -Dfile=com.ibm.mq.jar -DgroupId=com.ibm -DartifactId=mq -Dversion=7.0 -Dpackaging=jar  
+  
+mvn install:install-file -Dfile=com.ibm.mq.jmqi.jar -DgroupId=com.ibm.mq -DartifactId=jmqi -Dversion=7.0 -Dpackaging=jar  
+  
+mvn install:install-file -Dfile=com.ibm.mq.pcf.jar -DgroupId=com.ibm.mq -DartifactId=pcf -Dversion=7.0 -Dpackaging=jar  
+
+--mvn install:install-file -Dfile=connector.jar -DgroupId=javax.resource -DartifactId=connector -Dversion=7.0 -Dpackaging=jar
+  
+  
+<dependency>
+    <groupId>javax.resource</groupId>
+    <artifactId>connector</artifactId>
+    <version>1.0</version>
+</dependency>
+  

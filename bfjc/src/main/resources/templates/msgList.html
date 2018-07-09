@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta content="text/html;charset=UTF-8" />
+<meta http-equiv="X-UA_Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>接收消息列表</title>
+<link th:href="@{/js/layui/css/layui.css}" rel="stylesheet" />
+<script th:src="@{/js/layui/layui.js}"></script>
+<script th:src="@{/js/msgList.js}"></script>
+<script type="text/html" id="msgTypeCode">
+{{#	if(typeof(ccateMap['msgType'][d.msgType])=='undefined'){ }}
+	{{d.msgType}}
+{{#	}else{	}}
+	{{ccateMap['msgType'][d.msgType]}}
+{{#	}	}}
+</script>
+<script type="text/html" id="statusCode">
+{{#	if(typeof(ccateMap['status'][d.status])=='undefined'){ }}
+	{{d.dept}}
+{{#	}else{	}}
+	{{ccateMap['status'][d.status]}}
+{{#	}	}}
+</script>
+</head>
+<body style="margin:5px">
+
+<div class="layui-form">
+  <div class="layui-inline">
+    <label class="layui-form-label">消息ID：</label>
+    <div class="layui-input-inline">
+    	<input class="layui-input" name="id"  autocomplete="off"/>
+    </div>
+  </div>
+  <div class="layui-inline">
+    <label class="layui-form-label">消息类型：</label>
+    <div class="layui-input-inline">
+    	<select name="msgType">
+			<option value="">请选择</option>
+		</select>    
+    </div>
+  </div>
+  <div class="layui-inline">
+    <label class="layui-form-label">消息状态：</label>
+    <div class="layui-input-inline">
+    	<select name="status">
+			<option value="">请选择</option>
+		</select>  
+    </div>
+  </div>  
+<!--   <div class="layui-inline"> -->
+<!--     <label class="layui-form-label">航班ID：</label> -->
+<!--    <div class="layui-input-inline"> -->
+<!--     	<input class="layui-input" name="afdsId"  autocomplete="off"/> -->
+<!--     </div> -->
+<!--   </div>    -->
+  <div class="layui-inline">
+  	<button name="requery" class="layui-btn layui-btn-sm" data-type="requery"><i class="layui-icon">&#xe615;</i>搜索</button>
+  </div>
+</div>
+
+ 
+<table class="layui-table-mini" id="msgList" lay-filter="lay_msgList">
+</table>
+
+<script type="text/html" id="recToolbar">
+  <a class="layui-btn layui-btn-xs" lay-event="view"><i class="layui-icon">&#xe642;</i>查看</a>
+<!--a class="layui-btn layui-btn-xs" lay-event="parse"><i class="layui-icon">&#xe642;</i>重新解析</a-->    
+</script>
+</body>
+</html>

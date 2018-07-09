@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lsf.imf.mapper.MsgStoreMapper">
+
+	<resultMap type="com.lsf.imf.entity.bo.MsgStore" id="msgStoreMap">
+		<id property="id" column="id"/>
+		<result property="msgType" column="msg_type"/>
+		<result property="dataType" column="data_type"/>		
+		<result property="msgContent" column="msg_content"/>
+		<result property="sender" column="sender"/>
+		<result property="msgTime" column="msg_time"/>
+		<result property="receiveTime" column="receive_time"/>		
+		<result property="parseTime" column="parse_time"/>
+		<result property="status" column="status"/>				
+		<result property="seqNum" column="seqnum"/>
+		<result property="flightIdentity" column="flight_identity"/>
+		<result property="flightDirection" column="flight_direction"/>
+		<result property="flightRepeatCount" column="flight_repeat_count"/>
+		<result property="scheduledDate" column="scheduled_date"/>	
+		<result property="afdsId" column="afds_id"/>						
+		<result property="removed" column="removed"/>		
+	</resultMap>
+		
+	<select id="countMsgStore" resultType="java.lang.Integer">
+		
+		select count(*) from msg_store		
+		<include refid="msgStoreCondition"/>
+	</select>
+
+	<select id="pageQueryMsgStore" resultMap="msgStoreMap" resultType="java.util.List">
+		
+		select * from  msg_store
+		 
+		<include refid="msgStoreCondition"/>
+
+		 order by id desc limit ${start},${limit}	
+		
+	</select>
+
+	
+	<sql  id="msgStoreCondition">
+		<where>
+			removed=0 
+			<if test="id != null and id!= ''">
+				and id =#{id}
+			</if>
+			<if test="msgType != null and msgType!= ''">
+				and msg_type =#{msgType}
+			</if>
+			<if test="status != null and status!= ''">
+				and status =#{status}
+			</if>
+			<if test="afdsId != null and afdsId!= ''">
+				and afds_id =#{afdsId}
+			</if>			
+		</where>
+	</sql>	
+</mapper>
